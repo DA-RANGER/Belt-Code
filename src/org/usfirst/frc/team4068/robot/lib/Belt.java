@@ -1,7 +1,12 @@
 package org.usfirst.frc.team4068.robot.lib;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-
+/**
+ * 
+ * 
+ * @author brandonpfoff
+ *
+ */
 public class Belt {
 
 	Motor beltMotor = References.MOTOR.BELT;
@@ -16,11 +21,16 @@ public class Belt {
 
 	
 	/**
-	 * 
+	 *      ^
+	 * Belt |
 	 * 
 	 * 
 	 * This is the start of the pneumantics.
-	 */
+	 * 
+	 * 
+	 * Pneumatics |
+	 *            v
+	 **/
 	
 	
 	DoubleSolenoid brakes = References.DIO.BRAKES;
@@ -56,6 +66,7 @@ public class Belt {
 			break;
 		default:
 			break;
+			
 		
 		}
 		
