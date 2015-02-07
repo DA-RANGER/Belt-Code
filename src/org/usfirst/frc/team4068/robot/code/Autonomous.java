@@ -5,8 +5,10 @@
 
 package org.usfirst.frc.team4068.robot.code;
 
+import org.usfirst.frc.team4068.robot.lib.Belt;
 import org.usfirst.frc.team4068.robot.lib.Motor;
 import org.usfirst.frc.team4068.robot.lib.References;
+import org.usfirst.frc.team4068.robot.subsystems.DriveTrain;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Timer;
@@ -34,7 +36,6 @@ public class Autonomous implements Runnable{
         }
         run = false;
     }
-    
     public void start(){
         Thread t = new Thread(this);
         t.start();
@@ -73,7 +74,29 @@ public class Autonomous implements Runnable{
         }
     }
     
-    private void test2(){
+    DriveTrain drive = References.DRIVE;
+    Motor beltdrive = References.MOTOR.BELT;
+    
+    private void test2()
+    {
+    	
+    	beltdrive.set(.5);
+    	Timer.delay(2);
+    	beltdrive.set(0);
+    	
+    	drive.drive(0, -0.5, 0);
+    	Timer.delay(5);
+    	drive.drive(0, 0, 0);
+    	
+    	beltdrive.set(-.5);
+    	Timer.delay(2);
+    	beltdrive.set(0);
+    	
+    	drive.drive(0, -0.5, 0);
+    	Timer.delay(1.5);
+    	drive.drive(0, 0, 0);
+    	
+    	Timer.delay(4.5);
         
     }
     

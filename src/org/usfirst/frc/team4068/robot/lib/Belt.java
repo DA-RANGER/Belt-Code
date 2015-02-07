@@ -6,11 +6,19 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
  * 
  * @author brandonpfoff
  *
+ *
  */
 public class Belt {
-
-	Motor beltMotor = References.MOTOR.BELT;
 	
+	Motor beltMotor;
+	
+	public Belt(Motor beltMotor, DoubleSolenoid brakes)
+	{
+		
+		this.beltMotor = beltMotor;
+		this.brakes = brakes;
+		
+	}
 	
 	public void run(double speed)
 	{
@@ -33,7 +41,7 @@ public class Belt {
 	 **/
 	
 	
-	DoubleSolenoid brakes = References.DIO.BRAKES;
+	DoubleSolenoid brakes;
 	
 	public enum Mode{
 	    TELEOP(1),

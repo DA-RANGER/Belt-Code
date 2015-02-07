@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.vision.AxisCamera;
 
 public class References {
     
@@ -19,6 +20,8 @@ public class References {
                                                           MOTOR.DRIVE_BL, 
                                                           MOTOR.DRIVE_BR);
     
+    public static Belt BELTDRIVE = new Belt(MOTOR.BELT, DIO.BRAKES);
+    
     public static final Motor LIGHTS = new Motor(PWM.LIGHTS);
     
     public static final BuiltInAccelerometer ACCELEROMETER = new BuiltInAccelerometer();
@@ -26,6 +29,7 @@ public class References {
     public static final AnalogInput ULTRASONIC = new AnalogInput(0);
     
     public static final Encoder ENCODER1 = new Encoder(DIO.ENCODER_CHA, DIO.ENCODER_CHB, false, Encoder.EncodingType.k4X);
+    public static final AxisCamera CAMERA = new AxisCamera(null);
     
     public static class PWM {
         public static final int DRIVE_FL = 0;
@@ -54,8 +58,8 @@ public class References {
         public static final Motor DRIVE_FR = new Motor(PWM.DRIVE_FR);
         public static final Motor DRIVE_BL = new Motor(PWM.DRIVE_BL);
         public static final Motor DRIVE_BR = new Motor(PWM.DRIVE_BR);
-        public static final Motor BELT = new Motor(6);
-        public static final Motor ENCODER = new Motor(4);
+        public static final Motor BELT = new Motor(4);
+        public static final Motor ENCODER = new Motor(8);
     }
     
 }

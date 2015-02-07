@@ -22,6 +22,8 @@ public class Teleop implements Runnable{
     
     XboxController driver = References.DRIVER;
     
+    XboxController codriver = References.CODRIVER;
+    
     public Teleop(String thread){
         this.thread = thread;
     }
@@ -47,6 +49,13 @@ public class Teleop implements Runnable{
         drive.drive(x, y, r);
         
         //System.out.println("test");
+    }
+    
+    private void codrive()
+    {
+    	
+    	double belt = (codriver.getRightX()>=.15||codriver.getRightX()<=.2? codriver.getRightX() : 0);
+    	
     }
     
     AnalogInput ultrasonic = References.ULTRASONIC;
